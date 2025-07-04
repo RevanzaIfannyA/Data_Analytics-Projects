@@ -1,6 +1,6 @@
-# 📊 Data Analyst Portfolio
+# 📊 Data Analytics Portfolio
 
-Welcome to my Data Analyst Portfolio!
+Welcome to my Data Analytics Portfolio!
 
 I am a Bachelor of Actuarial Science with a strong interest in data analysis and problem solving. Through self-directed learning, I have developed hands-on experience in working with data using Python (Pandas, NumPy, Matplotlib), MySQL, Power BI, and Excel.
 
