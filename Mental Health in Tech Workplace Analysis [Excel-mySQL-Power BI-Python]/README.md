@@ -41,26 +41,26 @@ The repository is organized as follows:
 ```
 Mental-Health-Analysis/
 │
-├── 📄 README.md                    ← Main documentation: overview, objectives, tools, insights
-├── 📄 business_requirements.md    ← Business goals, KPIs, and analysis questions
+├── 📄 README.md                       ← Main documentation: overview, objectives, tools, insights
+├── 📄 business_requirements.md        ← Business goals, KPIs, and analysis questions
 │
-├── 📂 Asset/                       ← Supporting assets for Power BI UX or documentation
+├── 📂 Asset/                          ← Supporting assets for Power BI UX or documentation
 │   └── Open Menu Button Image.png
 │
 ├── 📂 Data/                        
-│   ├── mental_health_raw.csv     ← Original dataset (Kaggle)
-│   └── mental_health_clean.csv    ← Cleaned version used for SQL and Power BI
+│   ├── mental_health_raw.csv          ← Original dataset (Kaggle)
+│   └── mental_health_clean.csv        ← Cleaned version used for SQL and Power BI
 │
 ├── 📂 Excel/                      
-│   ├── mental_health_clean.xlsx   ← Final cleaned data (Power Query)
-│   └── power_query_script.txt     ← Exported steps from Power Query (Advanced Editor)
+│   ├── mental_health_clean.xlsx       ← Final cleaned data (Power Query)
+│   └── power_query_script.txt         ← Exported steps from Power Query (Advanced Editor)
 │
 ├── 📂 mySQL/                      
-│   └── mental_health_analysis.sql ← SQL scripts for exploratory analysis
+│   └── mental_health_analysis.sql     ← SQL scripts for exploratory analysis
 │
 ├── 📂 Power BI/                  
-│   ├── Mental Health Dashboard.pbix ← Final interactive Power BI dashboard
-│   └── Mental Health Dashboard.pdf  ← Static exported version (for preview or documentation)
+│   ├── Mental Health Dashboard.pbix   ← Final interactive Power BI dashboard
+│   └── Mental Health Dashboard.pdf    ← Static exported version (for preview or documentation)
 │
 └── 📂 Python/                    
     └── Mental_Health_in_Tech_Survey_Analysis.ipynb  ← Statistical validation using Chi-Square and Cramér's V
