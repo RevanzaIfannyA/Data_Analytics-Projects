@@ -113,20 +113,24 @@ This SQL work helped answer all KPIs and 13 supporting business questions before
 
 ## 📈 Power BI Dashboard
 
-A 4-page interactive dashboard was built using **Power BI** to visualize and present key findings in a clear and engaging way.
+A 4-page interactive dashboard was built using **Power BI** to visualize patterns and insights from the mental health survey.
+
+### 🧭 Key Features:
+- **KPI Cards** summarizing treatment rate, benefit coverage, and leave accessibility
+- **Custom slicer panel** accessible via a top-left toggle button
+- **User guide tooltip** on the top-right to help first-time viewers interact (e.g., holding Ctrl when clicking)
+- **Clean layout** with consistent color scheme and shadowed panels for better readability
 
 ### 📄 Dashboard Pages:
-1. **Overview** — KPI cards and general insights (treatment, benefits, openness)
-2. **Demographics** — Gender, age distribution, work arrangement
-3. **Company Policies** — Benefits, leave accessibility, care options
-4. **Perception & Culture** — Comfort talking about mental health, observed consequences
+1. **Overview**  
+   → KPIs, treatment breakdown, benefit availability, and leave accessibility comparison  
+2. **Demographic Breakdown**  
+   → Gender, age groups, self-employment, remote status, country-level distribution  
+3. **Company Policies**  
+   → Benefits by company size, leave by tech type, awareness of care options  
+4. **Perceptions and Culture**  
+   → Openness to talk, perceived consequences, and observed stigma
 
-### 🧩 Key Features:
-- KPI cards with DAX measures
-- Custom sorting (e.g., leave difficulty levels)
-- Dynamic slicers (e.g., gender, company type, work mode)
-- Clear color coding and grouped layouts for usability
-
-📁 Download or explore the full report:  
+📁 Access the full report:  
 - [`Power BI/Mental Health Dashboard.pbix`](./Power%20BI/Mental%20Health%20Dashboard.pbix)  
 - [`Power BI/Mental Health Dashboard.pdf`](./Power%20BI/Mental%20Health%20Dashboard.pdf)
