@@ -1,5 +1,5 @@
 let
-    Source = Csv.Document(File.Contents("C:\Prima\Projects\Mental Health Analysis\Data\mental_health_raw.csv"),[Delimiter=",", Columns=27, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+    Source = Csv.Document(File.Contents("C:\Prima\Data_Analytics-Projects\Data_Analytics-Projects\Mental Health in Tech Workplace Analysis [Excel-mySQL-Power BI-Python]\Data\mental_health_raw.csv"),[Delimiter=",", Columns=27, Encoding=1252, QuoteStyle=QuoteStyle.None]),
     #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
     #"Change Age Data Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Timestamp", type datetime}, {"Age", Int64.Type}}),
     #"Select Age" = Table.SelectRows(#"Change Age Data Type", each [Age] >= 18 and [Age] <= 65),
