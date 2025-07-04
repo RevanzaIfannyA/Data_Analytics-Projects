@@ -62,8 +62,8 @@ Mental-Health-Analysis/
 │   ├── Mental Health Dashboard.pbix ← Final interactive Power BI dashboard
 │   └── Mental Health Dashboard.pdf  ← Static exported version (for preview or documentation)
 │
-├── 📂 Python/                    
-│   └── Mental_Health_in_Tech_Survey_Analysis.ipynb  ← Statistical validation using Chi-Square and Cramér's V
+└── 📂 Python/                    
+    └── Mental_Health_in_Tech_Survey_Analysis.ipynb  ← Statistical validation using Chi-Square and Cramér's V
 ```
 This structure demonstrates a clear data workflow from raw data to insight generation using four tools: Excel, SQL, Power BI, and Python.
 
