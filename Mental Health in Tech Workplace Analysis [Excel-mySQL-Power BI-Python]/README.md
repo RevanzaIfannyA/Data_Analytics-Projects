@@ -134,3 +134,72 @@ A 4-page interactive dashboard was built using **Power BI** to visualize pattern
 📁 Access the full report:  
 - [`Power BI/Mental Health Dashboard.pbix`](./Power%20BI/Mental%20Health%20Dashboard.pbix)  
 - [`Power BI/Mental Health Dashboard.pdf`](./Power%20BI/Mental%20Health%20Dashboard.pdf)
+
+## 🐍 Python Analysis + Summary Table
+
+To validate the observed trends and confirm whether associations between variables were statistically significant, I used **Chi-Square Test** and **Cramér’s V** in Python.
+
+### 🔬 What was done:
+- Built reusable functions to compute chi-squared significance and relationship strength (Cramér’s V)
+- Compared categorical variables like gender vs treatment, remote work vs treatment, etc.
+- Focused on relationships that support or challenge earlier Power BI insights
+
+### 📊 Key Results:
+
+| Variable 1     | Variable 2     | Chi²   | p-value | Cramér’s V | Interpretation                             |
+|----------------|----------------|--------|---------|-------------|---------------------------------------------|
+| remote_work    | treatment      | 0.69   | 0.4047  | 0.024       | No significant association, negligible strength |
+| tech_company   | benefits       | 9.31   | 0.0095  | 0.086       | Statistically significant, but negligible strength |
+| coworkers      | supervisor     | 480.84 | 0.0000  | 0.439       | Strong and highly significant association   |
+| gender         | treatment      | 51.17  | 0.0000  | 0.202       | Moderate and significant association        |
+
+🧾 See the full code and results:  
+[`Python/Mental_Health_in_Tech_Survey_Analysis.ipynb`](./Python/Mental_Health_in_Tech_Survey_Analysis.ipynb)
+
+## 💡 Key Insights
+
+🔹 **Half of the respondents (50.48%) have sought mental health treatment**, indicating a significant prevalence of mental health concerns in the tech workplace.
+
+🔹 **Tech companies are more likely to offer mental health benefits**, but not by a large margin — highlighting a potential gap even within progressive industries.
+
+🔹 **Remote workers are slightly more likely to seek treatment** (52.43%) than on-site workers (49.66%), but the difference was **not statistically significant**.
+
+🔹 **Employees feel more comfortable discussing mental health with coworkers than supervisors**, suggesting cultural or structural barriers within organizations.
+
+🔹 **The ability to take mental health leave varies greatly**, with non-tech companies more often reporting it as "somewhat difficult" or "very difficult".
+
+🔹 **Gender has a moderate and statistically significant impact** on treatment-seeking behavior, showing the need for more inclusive support strategies.
+
+🔹 **Perceptions of stigma still exist**, with many respondents believing there are negative consequences to discussing mental health at work.
+
+---
+
+These insights were derived through a combination of SQL queries, Power BI dashboards, and statistical validation using Python.
+
+## 📂 Data Source
+
+The dataset used in this project comes from:
+
+📦 [Mental Health in Tech Survey (2014) – Kaggle](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey)
+
+- Collected by Open Sourcing Mental Illness (OSMI)
+- Contains 1,200+ responses from employees in the tech industry
+- Covers mental health treatment, company support, openness, and stigma
+- Original data was cleaned and processed before analysis
+
+🔍 Note: The survey was conducted in **2014**, which may affect how the findings apply to the current tech landscape.
+
+## 🙋 About Me + What I Learned
+
+Hi! I'm **Revan**, an aspiring data analyst with a background in actuarial science and a growing passion for turning messy data into meaningful stories.
+
+This project was my first full-cycle data analysis—from raw data to final dashboard—and taught me how to:
+- Perform structured **ETL** using Power Query
+- Write efficient **SQL** queries for analytical questions
+- Build clean and interactive **Power BI dashboards**
+- Validate insights with **Python statistical tests**
+- Organize and document projects like a professional portfolio
+
+Each tool used in this project served a unique purpose, and working through all of them helped me develop both technical and analytical thinking in a real-world context.
+
+Thank you for exploring this project 🙌
