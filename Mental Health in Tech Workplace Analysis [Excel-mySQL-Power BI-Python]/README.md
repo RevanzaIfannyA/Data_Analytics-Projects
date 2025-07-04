@@ -95,3 +95,38 @@ All cleaning and transformation steps were performed using **Power Query in Exce
 - Standardizing key categorical responses
 
 📄 The full step-by-step logic is available in [`Excel/power_query_script.txt`](./Excel/power_query_script.txt)
+
+## 🧮 SQL Analysis
+
+After cleaning the data, exploratory analysis and KPI calculations were performed using **MySQL**.
+
+Key SQL operations included:
+- Aggregating treatment data by gender, company type, and work arrangement
+- Comparing benefit availability across company sizes
+- Measuring openness to discuss mental health with coworkers and supervisors
+- Custom sorting using `FIELD()` for response clarity
+- Window functions (`OVER`, `PARTITION BY`) for percentage breakdowns
+
+This SQL work helped answer all KPIs and 13 supporting business questions before visualizing them in Power BI.
+
+📄 See full query logic: [`mySQL/mental_health_analysis.sql`](./mySQL/mental_health_clean.sql)
+
+## 📈 Power BI Dashboard
+
+A 4-page interactive dashboard was built using **Power BI** to visualize and present key findings in a clear and engaging way.
+
+### 📄 Dashboard Pages:
+1. **Overview** — KPI cards and general insights (treatment, benefits, openness)
+2. **Demographics** — Gender, age distribution, work arrangement
+3. **Company Policies** — Benefits, leave accessibility, care options
+4. **Perception & Culture** — Comfort talking about mental health, observed consequences
+
+### 🧩 Key Features:
+- KPI cards with DAX measures
+- Custom sorting (e.g., leave difficulty levels)
+- Dynamic slicers (e.g., gender, company type, work mode)
+- Clear color coding and grouped layouts for usability
+
+📁 Download or explore the full report:  
+- [`Power BI/Mental Health Dashboard.pbix`](./Power%20BI/Mental%20Health%20Dashboard.pbix)  
+- [`Power BI/Mental Health Dashboard.pdf`](./Power%20BI/Mental%20Health%20Dashboard.pdf)
