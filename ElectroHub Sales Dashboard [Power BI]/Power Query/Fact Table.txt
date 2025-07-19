@@ -1,0 +1,27 @@
+let
+    Source = Excel.Workbook(File.Contents("C:\Users\prima\Downloads\Store+Data.xlsx"), null, true),
+    Sheet3_Sheet = Source{[Item="Sheet3",Kind="Sheet"]}[Data],
+    #"Promoted Headers" = Table.PromoteHeaders(Sheet3_Sheet, [PromoteAllScalars=true]),
+    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"CustomerID", type text}, {"PromotionID", type text}}),
+    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Price Per Unit", "Total Sales", "Discount Percentage", "Discount Value", "Net Sales"}),
+    #"Merged Queries" = Table.NestedJoin(#"Removed Columns", {"Product ID"}, #"Dim Product", {"ProductID"}, "Dim Product", JoinKind.LeftOuter),
+    #"Expanded Dim Product" = Table.ExpandTableColumn(#"Merged Queries", "Dim Product", {"Price Per Unit (INR)"}, {"Dim Product.Price Per Unit (INR)"}),
+    #"Renamed Columns" = Table.RenameColumns(#"Expanded Dim Product",{{"Dim Product.Price Per Unit (INR)", "Price Per Unit"}}),
+    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Total Sales", each [Units Sold] * [Price Per Unit]),
+    #"Merged Queries1" = Table.NestedJoin(#"Added Custom", {"PromotionID"}, #"Dim Promotion", {"PromotionID"}, "Dim Promotion", JoinKind.LeftOuter),
+    #"Expanded Dim Promotion" = Table.ExpandTableColumn(#"Merged Queries1", "Dim Promotion", {"Percentage"}, {"Dim Promotion.Percentage"}),
+    #"Replaced Value" = Table.ReplaceValue(#"Expanded Dim Promotion",null,0,Replacer.ReplaceValue,{"Dim Promotion.Percentage"}),
+    #"Renamed Columns1" = Table.RenameColumns(#"Replaced Value",{{"Dim Promotion.Percentage", "Discount Percentage"}}),
+    #"Added Custom1" = Table.AddColumn(#"Renamed Columns1", "Discount", each [Total Sales] * [Discount Percentage] / 100),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom1",{{"Discount", type number}, {"Discount Percentage", Int64.Type}}),
+    #"Added Custom2" = Table.AddColumn(#"Changed Type1", "Net Sales", each [Total Sales] - [Discount]),
+    #"Added Custom3" = Table.AddColumn(#"Added Custom2", "Profit", each 0.1 * [Net Sales]),
+    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom3",{{"Profit", type number}, {"Net Sales", type number}, {"Units Sold", Int64.Type}, {"Date (dd/mm/yyyy)", type date}}),
+    #"Added Index" = Table.AddIndexColumn(#"Changed Type2", "Index", 1, 1, Int64.Type),
+    #"Reordered Columns" = Table.ReorderColumns(#"Added Index",{"Index", "Date (dd/mm/yyyy)", "CustomerID", "PromotionID", "Product ID", "Units Sold", "Price Per Unit", "Total Sales", "Discount Percentage", "Discount", "Net Sales", "Profit"}),
+    #"Renamed Columns2" = Table.RenameColumns(#"Reordered Columns",{{"Index", "Order ID"}}),
+    #"Changed Type3" = Table.TransformColumnTypes(#"Renamed Columns2",{{"Order ID", type text}, {"Date (dd/mm/yyyy)", type date}}),
+    #"Added Custom4" = Table.AddColumn(#"Changed Type3", "Date (no relationship)", each [#"Date (dd/mm/yyyy)"]),
+    #"Changed Type4" = Table.TransformColumnTypes(#"Added Custom4",{{"Date (no relationship)", type date}})
+in
+    #"Changed Type4"
