@@ -52,3 +52,21 @@ This project focuses on delivering insights into e-commerce performance by track
 
 For the full business requirements documentation, please refer to  
 [`business_requirements.md`](./business_requirements.md)
+
+## 📂 Project Structure
+```
+E-Commerce Data Analysis [mySQL - Power BI]/
+│
+├── 📄 README.md # Project documentation (this file)
+├── 📄 business_requirements.md # Detailed business questions & KPIs
+│
+├── 📂 Data/
+│ └── project1_df.csv # Raw dataset used for analysis
+│
+├── 📂 mySQL/
+│ └── ecommerce_data_analysis_project.sql # SQL scripts for data analysis
+│
+└── 📂 Power BI/
+├── E-Commerce Data Analysis.pbix # Power BI dashboard file
+└── E-Commerce Data Analysis.pdf # Exported dashboard in PDF format
+```
