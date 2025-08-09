@@ -70,3 +70,39 @@ E-Commerce Data Analysis [mySQL - Power BI]/
 ├── E-Commerce Data Analysis.pbix # Power BI dashboard file
 └── E-Commerce Data Analysis.pdf # Exported dashboard in PDF format
 ```
+
+## 📌 Workflow / Methodology
+
+The project follows a straightforward yet effective workflow to transform raw data into actionable dashboards:
+
+1. **Data Acquisition**  
+   - Download the dataset from Kaggle: [E-Commerce Dataset](https://www.kaggle.com/datasets/ahsan81/superstore-marketing-campaign-dataset)  
+   - Store the dataset in MySQL database for further processing.
+
+2. **Data Cleaning (MySQL)**  
+   - Check each column for blank values.  
+   - Replace any blank values with `NULL` to standardize missing data representation.  
+   - Ensure data types are consistent across columns.
+
+3. **Querying & KPI Preparation (MySQL)**  
+   - Write SQL queries to extract metrics and aggregated data needed for analysis.  
+   - Validate query outputs against the raw dataset to ensure accuracy.
+
+4. **Data Connection & Light Adjustments (Power Query)**  
+   - Connect Power BI directly to the MySQL database.  
+   - Perform minor adjustments such as column renaming, filtering, and type conversions.
+
+5. **Data Visualization (Power BI)**  
+   - Build interactive dashboards and visualizations based on KPIs.  
+   - Apply drill-down, slicers, and filters for dynamic analysis.  
+   - Design intuitive layouts for better readability.
+
+6. **Dashboard Export**  
+   - Export the completed dashboard to PDF format for sharing and documentation.
+
+## 📊 Dashboard Preview
+
+You can view the complete interactive dashboard design in the PDF below:  
+
+[📄 **E-Commerce Data Analysis Dashboard (PDF)**](Power%20BI/E-Commerce%20Data%20Analysis.pdf)
+
